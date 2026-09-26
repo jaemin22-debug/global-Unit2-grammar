@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit 2 Practice Quiz</title>
+  <style>
+    :root {
+      --primary-color: #2563eb;
+      --primary-hover: #1d4ed8;
+      --bg-color: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --border-color: #e2e8f0;
+      --highlight: #eff6ff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      line-height: 1.6;
+      padding: 40px 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      max-width: 760px;
+      width: 100%;
+      background: var(--card-bg);
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    }
+
+    header {
+      margin-bottom: 32px;
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 20px;
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
+
+    header p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .question-card {
+      margin-bottom: 28px;
+      padding: 24px;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      background: #fafafa;
+    }
+
+    .question-title {
+      font-weight: 600;
+      font-size: 1.05rem;
+      margin-bottom: 12px;
+      color: var(--text-main);
+    }
+
+    .context-box {
+      background: #ffffff;
+      border-left: 4px solid var(--primary-color);
+      padding: 12px 16px;
+      margin-bottom: 16px;
+      border-radius: 4px;
+      font-size: 0.95rem;
+      color: #334155;
+    }
+
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .option-label {
+      display: flex;
+      align-items: center;
+      padding: 12px 16px;
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-size: 0.95rem;
+    }
+
+    .option-label:hover {
+      background: var(--highlight);
+      border-color: #93c5fd;
+    }
+
+    .option-label input[type="radio"] {
+      margin-right: 12px;
+      accent-color: var(--primary-color);
+      width: 17px;
+      height: 17px;
+    }
+
+    .btn-container {
+      margin-top: 36px;
+      text-align: center;
+    }
+
+    button {
+      background-color: var(--primary-color);
+      color: white;
+      border: none;
+      padding: 14px 36px;
+      font-size: 1.05rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+
+    button:hover {
+      background-color: var(--primary-hover);
+    }
+
+    #result-box {
+      margin-top: 24px;
+      padding: 18px;
+      border-radius: 8px;
+      text-align: center;
+      font-size: 1.25rem;
+      font-weight: 700;
+      display: none;
+    }
+
+    .score-display {
+      background-color: #ecfdf5;
+      color: #065f46;
+      border: 1px solid #a7f3d0;
+    }
+
+    .warning-display {
+      background-color: #fffbeb;
+      color: #92400e;
+      border: 1px solid #fde68a;
+      font-size: 1rem !important;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1>English Review Quiz</h1>
+      <p>Answer all 8 questions. Click "Submit Answers" at the bottom to check your total score.</p>
+    </header>
+
+    <form id="quiz-form">
+      <!-- Q1: Vocabulary (Feelings) - Ans: B -->
+      <div class="question-card">
+        <div class="question-title">1. Read the situation and choose the emotion that best describes how the speaker feels.</div>
+        <div class="context-box">
+          "I have been waiting at the bus stop for over 40 minutes. My friend promised to be here on time, but he is late again and not answering my calls."
+        </div>
+        <div class="options">
+          <label class="option-label"><input type="radio" name="q1" value="A"> A. relaxed</label>
+          <label class="option-label"><input type="radio" name="q1" value="B"> B. annoyed</label>
+          <label class="option-label"><input type="radio" name="q1" value="C"> C. proud</label>
+          <label class="option-label"><input type="radio" name="q1" value="D"> D. calm</label>
+        </div>
+      </div>
+
+      <!-- Q2: Vocabulary (Feelings) - Ans: C -->
+      <div class="question-card">
+        <div class="question-title">2. Read the situation and choose the emotion that best describes how Minho feels.</div>
+        <div class="context-box">
+          "Minho is sitting through a two-hour lecture with no slides or activities. Nothing interesting is happening, and he keeps checking the clock every two minutes."
+        </div>
+        <div class="options">
+          <label class="option-label"><input type="radio" name="q2" value="A"> A. excited</label>
+          <label class="option-label"><input type="radio" name="q2" value="B"> B. shocked</label>
+          <label class="option-label"><input type="radio" name="q2" value="C"> C. bored</label>
+          <label class="option-label"><input type="radio" name="q2" value="D"> D. nervous</label>
+        </div>
+      </div>
+
+      <!-- Q3: Expressions - Ans: A -->
+      <div class="question-card">
+        <div class="question-title">3. Complete the conversation with the most natural expression.</div>
+        <div class="context-box">
+          Mei: "Hi, Felipe! How's it going?"<br>
+          Felipe: "Pretty good, thanks! ________________?"<br>
+          Mei: "I'm doing well, thank you."
+        </div>
+        <div class="options">
+          <label class="option-label"><input type="radio" name="q3" value="A"> A. How are you doing</label>
+          <label class="option-label"><input type="radio" name="q3" value="B"> B. What are they watching</label>
+          <label class="option-label"><input type="radio" name="q3" value="C"> C. Did it work for you</label>
+          <label class="option-label"><input type="radio" name="q3" value="D"> D. Where are you from</label>
+        </div>
+      </div>
+
+      <!-- Q4: Expressions - Ans: D -->
+      <div class="question-card">
+        <div class="question-title">4. Complete the exchange between two friends meeting on campus.</div>
+        <div class="context-box">
+          Tom&aacute;s: "Hey, Carla. How are you doing?"<br>
+          Carla: "So-so."<br>
+          Tom&aacute;s: "Yeah? ________________?"<br>
+          Carla: "Oh, I have a big exam this afternoon and I'm stressed out."
+        </div>
+        <div class="options">
+          <label class="option-label"><input type="radio" name="q4" value="A"> A. Nice to meet you</label>
+          <label class="option-label"><input type="radio" name="q4" value="B"> B. How do you do</label>
+          <label class="option-label"><input type="radio" name="q4" value="C"> C. Are you leaving now</label>
+          <label class="option-label"><input type="radio" name="q4" value="D"> D. What's up</label>
+        </div>
+      </div>
+
+      <!-- Q5: Expressions / Video - Ans: B -->
+      <div class="question-card">
+        <div class="question-title">5. According to the video &ldquo;The Smile Test,&rdquo; which phrase best completes the advice?</div>
+        <div class="context-box">
+          "If you put energy into your voice and a spring in your step, you will suddenly ________________."
+        </div>
+        <div class="options">
+          <label class="option-label"><input type="radio" name="q5" value="A"> A. get annoyed with people</label>
+          <label class="option-label"><input type="radio" name="q5" value="B"> B. feel much better</label>
+          <label class="option-label"><input type="radio" name="q5" value="C"> C. lose all your energy</label>
+          <label class="option-label"><input type="radio" name="q5" value="D"> D. fall fast asleep</label>
+        </div>
+      </div>
+
+      <!-- Q6: Grammar (Usage) - Ans: A -->
+      <div class="question-card">
+        <div class="question-title">6. Which sentence describes an action happening for a longer period of time around the present (&ldquo;these days&rdquo;), rather than right at this exact moment?</div>
+        <div class="options">
+          <label class="option-label"><input type="radio" name="q6" value="A"> A. You're working really hard these days.</label>
+          <label class="option-label"><input type="radio" name="q6" value="B"> B. Look! The teacher is smiling at you.</label>
+          <label class="option-label"><input type="radio" name="q6" value="C"> C. Listen, someone is knocking on the door right now.</label>
+          <label class="option-label"><input type="radio" name="q6" value="D"> D. I am washing the dishes at this second.</label>
+        </div>
+      </div>
+
+      <!-- Q7: Grammar (Form) - Ans: C -->
+      <div class="question-card">
+        <div class="question-title">7. Choose the correct form to complete the question in the present continuous.</div>
+        <div class="context-box">
+          &ldquo;________________ a warm jacket today? It looks quite cold outside.&rdquo;
+        </div>
+        <div class="options">
+          <label class="option-label"><input type="radio" name="q7" value="A"> A. Does our classmate wearing</label>
+          <label class="option-label"><input type="radio" name="q7" value="B"> B. Is our classmate wear</label>
+          <label class="option-label"><input type="radio" name="q7" value="C"> C. Is our classmate wearing</label>
+          <label class="option-label"><input type="radio" name="q7" value="D"> D. Are our classmate wearing</label>
+        </div>
+      </div>
+
+      <!-- Q8: Grammar (Responses) - Ans: D -->
+      <div class="question-card">
+        <div class="question-title">8. Choose the correct short answer to the following question:</div>
+        <div class="context-box">
+          Question: &ldquo;Are you and your roommate living in the university dormitory this semester?&rdquo;<br>
+          Answer: &ldquo;No, ________________. We are renting an apartment off campus.&rdquo;
+        </div>
+        <div class="options">
+          <label class="option-label"><input type="radio" name="q8" value="A"> A. I'm not</label>
+          <label class="option-label"><input type="radio" name="q8" value="B"> B. they aren't</label>
+          <label class="option-label"><input type="radio" name="q8" value="C"> C. we don't</label>
+          <label class="option-label"><input type="radio" name="q8" value="D"> D. we're not</label>
+        </div>
+      </div>
+
+      <div class="btn-container">
+        <button type="button" onclick="calculateScore()">Submit Answers</button>
+      </div>
+    </form>
+
+    <div id="result-box"></div>
+  </div>
+
+  <script>
+    const answerKey = {
+      q1: 'B',
+      q2: 'C',
+      q3: 'A',
+      q4: 'D',
+      q5: 'B',
+      q6: 'A',
+      q7: 'C',
+      q8: 'D'
+    };
+
+    function calculateScore() {
+      const totalQuestions = 8;
+      let score = 0;
+      let answeredCount = 0;
+
+      for (let i = 1; i <= totalQuestions; i++) {
+        const selected = document.querySelector(`input[name="q${i}"]:checked`);
+        if (selected) {
+          answeredCount++;
+          if (selected.value === answerKey[`q${i}`]) {
+            score++;
+          }
+        }
+      }
+
+      const resultBox = document.getElementById('result-box');
+      resultBox.style.display = 'block';
+
+      if (answeredCount < totalQuestions) {
+        resultBox.className = 'warning-display';
+        resultBox.textContent = `Please answer all questions before submitting. (${answeredCount}/${totalQuestions} answered)`;
+      } else {
+        resultBox.className = 'score-display';
+        resultBox.textContent = `Your Score: ${score} / ${totalQuestions}`;
+      }
+    }
+  </script>
+</body>
+</html>
